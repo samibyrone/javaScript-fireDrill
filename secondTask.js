@@ -1,3 +1,4 @@
+
 function reverseArray(index) {
 	let array = 0;
 	let array_end = index.length -1;
@@ -16,36 +17,70 @@ console.log(reverseArray([1,2,3,4,5]));
 
 
 
-function factorial(number) {
-	let factor = 1;
 
-	for(let count = number; count >= 1; count ++) {
-		if(number >= 1 && number <= 20) {
-			factor *= number;
-		}
+function factorial(number) {
+
+	
+	if(number < 0) {
+		return "factorial isn't defined.";
 	}
+	let factor = 1;
+	for(let count = 1; count <= number; count ++) {
+			factor *= count;
+		}
 			return factor;
 } 
 
-console.log(factorial([5]))
+console.log(factorial(5))
+
 
 
 
 function isPalindrome(value) {
-	let factors = 0;
- 	let counter = 0;
-	for(let index  = 1;index < number.length; index){
-		if(index % 2 == 0){
-			factors = number % index;
-			counter ++;
+	let factors = "";
+
+	for(let index = value.length -1; index >= 0; index --) {
+			factors += value[index];
+	}
+	return value == factors;
+}
+console.log(isPalindrome("racecar"));
+console.log(isPalindrome("hello"));
+console.log(isPalindrome("madam"));
+
+
+
+
+function sumMultiplesOfThreeAndFive(numbers) {
+	let sum = 0;
+
+	for(let count = 1; count < numbers; count ++) {
+		if(count % 3 === 0 || count % 5 == 0) {
+			sum += count;
 		}
 	}
-	if(counter > 1){
-        	return false;
-		}
-             return true;
+		return sum;
 }
+console.log(sumMultiplesOfThreeAndFive(500));
 
-console.log(isPalindrome([racecar]))
 
-module.exports = {reverseArray, factorial, isPalindrome}
+
+
+
+
+function isLeapYear(year) {
+
+	if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+		return true;
+    	} else {
+        	return false;
+    	}
+}
+console.log(isLeapYear(2024)); 
+console.log(isLeapYear(2023)); 
+console.log(isLeapYear(1999)); 
+console.log(isLeapYear(2020)); 
+
+
+
+module.exports = {reverseArray, factorial, isPalindrome, sumMultiplesOfThreeAndFive, isLeapYear};
