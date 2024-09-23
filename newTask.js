@@ -1,9 +1,10 @@
+const { XCODE_CLOUD } = require("ci-info");
+
 const book = {
 	title : 'The Great Gatsby', 
 	author : 'F.Scott Fitzgerald', 
 	yearPublished : 1925
 	}
-
 const {title, author, yearPublished} = book
 console.log(title,"by", author)
 
@@ -20,7 +21,6 @@ const car = {
 };
 carAccesories(car);
 carAccesories(car.make);
-
 
 
 
@@ -48,13 +48,11 @@ const person1 = {
 		lastName : "ibironke";
 	}
 }
-
 function fullName(prson1) {
 	for(let human in person1) {
 		console.log(person1[human]);
 	}
 }
-
 fullName(person1);
 fullName(person1.firstNamelastName);
 
@@ -67,3 +65,4 @@ const person2 = {
 }
 
 console.log(person2);
+
